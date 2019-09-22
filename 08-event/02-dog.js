@@ -2,8 +2,8 @@
 
 const EventEmitter = require('events').EventEmitter;
 
-function Dog(name,energy){
-  var _name,_energy;
+function Dog(name, energy) {
+  var _name, _energy;
   var that = this;
 
   EventEmitter.call(this);
@@ -11,22 +11,21 @@ function Dog(name,energy){
   _energy = energy;
 
   var timer = setInterval(() => {
-    if(energy >0){
+    if(energy > 0) {
       that.emit('bark');
       _energy--;
     }
-  
-    if(_energy<=0){
+
+    if(_energy <= 0) {
       global.clearInterval(timer);
     }
-  },1000);
+  }, 1000);
 
   this.name = () => _name;
-
+    
   this.energy = () => _energy;
 }
 
-D.prototype = EventEmitter.prototype;
+Dog.prototype = EventEmitter.prototype;
 
 module.exports = Dog;
-
