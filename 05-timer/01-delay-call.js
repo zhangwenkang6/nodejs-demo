@@ -12,4 +12,4 @@ var bomb = new Bomb();
 
 var timeID = setTimeout(bomb.explode.bind(bomb), 2000);
 
-//clearTimeout(timeID);
+clearTimeout(timeID);

@@ -1,5 +1,5 @@
 
-const stdin = process.stdin;
+const stdin = process.stdin,
       stdout = process.stdout;
 
 stdin.resume();

@@ -42,6 +42,6 @@ log('\nbuf5:',buf5.length,buf5);
 // UTF8 编码
 var str = '你好 xxx';
 var buf6 = new Buffer(str,'utf8');
-log('\nbuffer length:',buf5.length);
-log('\nbuffer content:',buf5);
+log('\nbuffer length:',buf6.length);
+log('\nbuffer content:',buf6);
 log('string length',str.length);

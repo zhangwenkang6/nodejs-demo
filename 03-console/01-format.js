@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 const user ={
-  name:"张文康",
+  name:'张文康',
   age:20,
   qq:'823809867'
 };
@@ -17,4 +17,4 @@ log('qq:',user.qq);     //输出方法二：逗号间隔，多变量输出
 log('qq:'+user.qq);     //输出方法三：拼接字符输出
 log(`qq: ${user.qq}`);  //输出方法四：模板字符串输出
 
-console.error('Error! something wrong!')
+console.error('Error! something wrong!');

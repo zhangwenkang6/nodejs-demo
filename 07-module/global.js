@@ -1,4 +1,5 @@
 global.pi = Math.PI;
+var pi;
 
 global.circle = (radius) => {
   function circumference() {

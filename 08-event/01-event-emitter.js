@@ -8,7 +8,7 @@ setInterval(() =>{
 },1000);
 
 setTimeout(() =>{
-  e.emit('bye')
+  e.emit('bye');
 },5000);
 
 e.on('hello',() => {
