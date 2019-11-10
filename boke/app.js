@@ -3,6 +3,7 @@ const fs = require('fs');
 const url = require('url');
 qs=require('querystring');
 
+var userList = {username: "admin", pwd: "admin"};
 http.createServer(function(req,res){
   let path = url.parse(req.url).pathname;
   if(path == '/detail'){
@@ -30,10 +31,23 @@ http.createServer(function(req,res){
       res.end(data);
     })
   }else if(path=="/listmanager"){
-      fs.readFile("list.html",function(error,data){
-        res.writeHead(200,{"Content-Type":"text/html"});
-        res.end(data);
-      });
+      // let xxx =url.parse(req.url);
+      let query=qs.parse(url.parse(req.url).query);
+      // console.log(xxx);
+      // console.log(query);
+      if(query.username == userList.username && query.pwd== userList.pwd){
+        fs.readFile("list.html",function(error,data){
+          res.writeHead(200,{"Content-Type":"text/html"});
+          res.end(data);
+        });
+      }else{
+        // console.log(req.url);
+        // req.url = '/login';
+        fs.readFile("login.html",function(error,data){    
+          res.writeHead(200,{"Content-Type":"text/html"});
+          res.end(data);
+        });
+      }
   }else if(path == '/add'){
     var list = fs.readFileSync('./list.JSON');
     res.write(list);
